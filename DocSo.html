@@ -3,60 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        function docSo1(number) {
+            let t1 = "";
+            switch (number) {
+                case 0:
+                    t1="khong";
+                    break;
+                case 1:
+                    t1="mot";
+                    break;
+                case 2:
+                    t1="hai";
+                    break;
+                case 3:
+                    t1="ba";
+                    break;
+                case 4:
+                    t1="bon";
+                    break;
+                case 5:
+                    t1="nam";
+                    break;
+                case 6:
+                    t1="sau";
+                    break;
+                case 7:
+                    t1="bay";
+                    break;
+                case 8:
+                    t1="tam";
+                    break;
+                case 9:
+                    t1="chin";
+                    break;
+                    default:
+                        t1="khong biet";
+            }
+            return t1;
+        }
+
+        function docSo3(number) {
+            let t2 = "";
+            let hangtram, hangchuc, hangdonvi;
+
+            hangdonvi = number % 10;
+            hangchuc = (number / 10) % 10;
+            hangtram = number / 100;
+
+            hangchuc=parseInt(hangchuc);
+            hangtram=parseInt(hangtram);
+
+
+            t2 = docSo1(hangtram) + "tram";
+            t2 += docSo1(hangchuc) + "muoi";
+            t2 += docSo1(hangdonvi);
+
+            return t2;
+        }
+
+        function docSo9(number) {
+            let str = "";
+            let hangTram = number % 1000;
+            let hangNghin = parseInt(number / 1000) % 1000;
+            let hangTrieu = parseInt(number / 1000000) % 1000000;
+            let hangTy = parseInt(number / 1000000000) % 1000000000;
+            console.log(hangNghin);
+            if (number > 1000000000) {
+                str = docSo3(hangTy) + " ty";
+                str += docSo3(hangTrieu) + " trieu";
+                str += docSo3(hangNghin) + " nghin";
+                str += docSo3(hangTram);
+            } else if (number > 1000000) {
+                str = docSo3(hangTrieu) + " trieu";
+                str += docSo3(hangNghin) + " nghin";
+                str += docSo3(hangTram);
+            } else if (number > 1000) {
+                str = docSo3(hangNghin) + " nghin";
+                str += docSo3(hangTram);
+            } else if (number > 100) {
+                str = docSo3(hangTram);
+            }
+            return str;
+        }
+        function docSo() {
+            let number = parseInt(prompt("nhap so :"));
+            alert(docSo9(number));
+        }
+    </script>
 </head>
 <body>
-<script>
-    let number=parseInt(prompt("nhap so"));
-    let str="number";
-        switch (number) {
-            case 0:
-                str = "khong";
-                break;
-            case 1:
-                str = "mot";
-                break;
-            case 2:
-                str = "hai";
-                break;
-            case 3:
-                str = "ba";
-                break;
-            case 4 :
-                str = "bon";
-                break;
-            case 5:
-                str = "nam";
-                break;
-            case 6:
-                str = "sau";
-                break;
-            case 7:
-                str = "bay";
-                break;
-            case 8:
-                str = "tam";
-                break;
-            case 9:
-                str = "chin";
-                break;
-            default:
-                str= "khong biet";
-        }
-        return str;
-    }
-
-
-
-
-
-
-//     function docso() {
-// let number;
-// number=prompt("nhap so");
-// number=Number.parseInt(number);
-//         alert(docso1(number));
-//     }
-
-</script>
+<button onclick="docSo()">DocSo</button>
 </body>
 </html>

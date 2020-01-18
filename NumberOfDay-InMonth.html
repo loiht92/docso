@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number of days in a month</title>
+</head>
+<body>
+<input type="number" id="month">
+<button onclick="tinhsongay()">Tinh so ngay</button>
+
+<script>
+    function tinhsongay(){
+    let month = Number(document.getElementById("month").value);
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("thang co 31 ngay");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert("thang co 30 ngay");
+            break;
+        case 2:
+            alert("thang 2 co 28 hoac 29 ngay ")
+    }
+    }
+</script>
+</body>
+</html>

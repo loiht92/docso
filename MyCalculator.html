@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Calculator</title>
+    <script>
+function calculator(value) {
+    switch (value) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            document.getElementById("screen").innerHTML= '+ value';
+            break;
+    }
+}
+    </script>
+</head>
+<body>
+<form>
+    <table border="1">
+        <tr>
+            <td colspan="4"  align="right"><div id="screen">&nbsp;</div></td>
+        </tr>
+        <tr>
+            <td><button id= "no_1" onclick="calculator(1)">1</button></td>
+            <td><button id= "no_2" onclick="calculator(2)">2</button></td>
+            <td><button id="no_3" onclick="calculator(3)">3</button></td>
+            <td><button id="no_plus" onclick="calculator('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="no_4" onclick="calculator(4)">4</button></td>
+            <td><button id="no_5" onclick="calculator(5)">5</button></td>
+            <td><button id="no_6" onclick="calculator(6)">6</button></td>
+            <td><button id="no_minus" onclick="calculator('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="no_7" onclick="calculator(7)">7</button></td>
+            <td><button id="no_8" onclick="calculator(8)">8</button></td>
+            <td><button id="no_9" onclick="calculator(9)">9</button></td>
+            <td><button id="no_mul" onclick="calculator('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button id="no_del" onclick="calculator('C')">C</button></td>
+            <td><button id="no_0" onclick="calculator(0)">0</button></td>
+            <td><button id="no_equal" onclick="calculator('=')">=</button></td>
+            <td><button id="no_sha" onclick="calculator('/')">/</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
